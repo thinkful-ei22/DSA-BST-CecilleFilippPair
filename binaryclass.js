@@ -21,7 +21,7 @@ class binTree {
       if(this.right == null) {
         this.right = new binTree(key, value, this);
       } else {
-        this.left.insert(key, value);
+        this.right.insert(key, value);
       }
     }
   }
@@ -94,3 +94,5 @@ class binTree {
     }
   }
 }
+
+module.exports = binTree;

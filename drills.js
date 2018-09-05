@@ -1,3 +1,24 @@
+const binTree = require('./binaryclass.js');
+
+const bst = new binTree();
+
+const main = function() {
+  bst.insert(3);
+  bst.insert(1);
+  bst.insert(4);
+  bst.insert(6);
+  bst.insert(9);
+  bst.insert(2);
+  bst.insert(5);
+  bst.insert(7);
+
+  bst.remove(3);
+
+  console.log(bst);
+}
+
+main();
+
 // BST
 // Given the following data 3,1,4,6,9,2,5,7. If you were to insert
 // this into an empty Binary Search Tree, how would the tree look like?
@@ -10,9 +31,9 @@
 //                                   7
 //
 
-// Remote Root
+// Remove Root
 
 //                        4
 //                   1         6
 //                       2   5     9
-//                             7           
+//                             7

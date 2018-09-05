@@ -29,6 +29,19 @@ function isThisABST(currNode, min, max){
   );
 }
 
+// Third largest node
+
+function thirdLargestNode(node, sortedArray=[]) {
+
+  if(node) {
+    thirdLargestNode(node.left, sortedArray);
+    sortedArray.push(node.key);
+    thirdLargestNode(node.right, sortedArray);
+  }
+
+  return sortedArray[sortedArray.length-3];
+}
+
 const main = function() {
   bst.insert(3);
   bst.insert(1);
@@ -39,13 +52,15 @@ const main = function() {
   bst.insert(5);
   bst.insert(7);
 
-  //bst.remove(3);
+  bst.remove(3);
 
   //console.log(height(bst));
 
   //console.log(bst);
 
-  console.log(isThisABST(bst, null, null));
+  //console.log(isThisABST(bst, null, null));
+
+  //console.log(thirdLargestNode(bst));
 };
 
 main();

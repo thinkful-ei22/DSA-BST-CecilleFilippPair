@@ -14,6 +14,21 @@ function height(node) {
   return Math.max(heightLeft, heightRight) + 1;
 }
 
+// is it BST?
+
+function isThisABST(currNode, min, max){
+  if (currNode == null) {
+    return true;
+  }
+
+  return (
+    (min == null || min <= currNode.key) &&
+    (max == null || max >= currNode.key) &&
+    isThisABST(currNode.left, min, currNode.key) &&
+    isThisABST(currNode.right, currNode.key, max)
+  );
+}
+
 const main = function() {
   bst.insert(3);
   bst.insert(1);
@@ -24,11 +39,13 @@ const main = function() {
   bst.insert(5);
   bst.insert(7);
 
-  bst.remove(3);
+  //bst.remove(3);
 
   //console.log(height(bst));
 
   //console.log(bst);
+
+  console.log(isThisABST(bst, null, null));
 };
 
 main();

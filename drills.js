@@ -2,6 +2,18 @@ const binTree = require('./binaryclass.js');
 
 const bst = new binTree();
 
+// Height of a BST
+
+function height(node) {
+  if (!node) {
+    return 0;
+  }
+  let heightLeft = height(node.left);
+  let heightRight = height(node.right);
+
+  return Math.max(heightLeft, heightRight) + 1;
+}
+
 const main = function() {
   bst.insert(3);
   bst.insert(1);
@@ -14,8 +26,10 @@ const main = function() {
 
   bst.remove(3);
 
-  console.log(bst);
-}
+  //console.log(height(bst));
+
+  //console.log(bst);
+};
 
 main();
 

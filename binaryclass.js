@@ -8,12 +8,12 @@ class binTree {
   }
 
   insert(key, value) {
-      if(this.key == null) {
-        this.key = key;
-        this.value = value;
-      } else if(key < this.key) {
-        if(this.left == null) {
-          this.left = new binTree(key, value, this);
+    if(this.key == null) {
+      this.key = key;
+      this.value = value;
+    } else if(key < this.key) {
+      if(this.left == null) {
+        this.left = new binTree(key, value, this);
       } else {
         this.left.insert(key, value);
       }
@@ -34,7 +34,7 @@ class binTree {
     } else if(key > this.key && this.right) {
       return this.right.find(key);
     } else {
-            throw new Error('Key Error');
+      throw new Error('Key Error');
     }
   }
 
@@ -65,10 +65,10 @@ class binTree {
   }
 
   _findMin() {
-        if (!this.left) {
-            return this;
-        }
-        return this.left._findMin();
+    if (!this.left) {
+      return this;
+    }
+    return this.left._findMin();
   }
 
   remove(key) {
@@ -88,7 +88,7 @@ class binTree {
     } else if(key < this.key && this.left) {
       this.left.remove(key);
     } else if(key > this.key && this.right) {
-      this.right.remove(key)
+      this.right.remove(key);
     } else {
       throw new Error('Key Error');
     }
